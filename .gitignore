@@ -6,3 +6,5 @@ BlazorMusicCatalog.Data/obj/BlazorMusicCatalog.Data.csproj.nuget.g.props
 /BlazorMusicCatalog.Models/obj
 /BlazorMusicCatalog/bin
 /BlazorMusicCatalog/obj
+*.mp3
+Recursos/ridethelightning.jpg
