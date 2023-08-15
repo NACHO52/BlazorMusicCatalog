@@ -17,19 +17,20 @@ namespace BlazorMusicCatalog.Data.Services
             _context = context;
         }
 
-        public Task<bool> DeleteAlbum(Album album)
+        public async Task<bool> DeleteAlbum(Album album)
         {
-            throw new NotImplementedException();
+            _context.Albums.Remove(album);
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<Album> GetAlubumDetails(int id)
+        public async Task<Album> GetAlbumDetails(int id)
         {
             return await _context.Albums.Where(s => s.Id == id).Include(s => s.Songs).FirstOrDefaultAsync();
         }
 
-        public Task<IEnumerable<Album>> GetAlubums()
+        public async Task<IEnumerable<Album>> GetAlbums()
         {
-            throw new NotImplementedException();
+            return await _context.Albums.ToListAsync();
         }
 
         public async Task<bool> InsertAlbum(Album album)
@@ -39,9 +40,11 @@ namespace BlazorMusicCatalog.Data.Services
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public Task<bool> UpdateAlbum(Album album)
+        public async Task<bool> UpdateAlbum(Album album)
         {
-            throw new NotImplementedException();
+            _context.Update(album);
+
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

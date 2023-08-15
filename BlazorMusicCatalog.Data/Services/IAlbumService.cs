@@ -9,8 +9,8 @@ namespace BlazorMusicCatalog.Data.Services
 {
     public interface IAlbumService
     {
-        Task<IEnumerable<Album>> GetAlubums();
-        Task<Album> GetAlubumDetails(int id);
+        Task<IEnumerable<Album>> GetAlbums();
+        Task<Album> GetAlbumDetails(int id);
         Task<bool> InsertAlbum(Album album);
         Task<bool> UpdateAlbum(Album album);
         Task<bool> DeleteAlbum(Album album);
